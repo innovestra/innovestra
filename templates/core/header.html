@@ -1,0 +1,31 @@
+<header class="header mb-4">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" href="{% url "homepage" %}">INNOVESTRA ENTERPRISES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"  id="navbarColor01">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="{% url "homepage" %}">Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+        <div class="d-flex get-started btn-lg ">
+            <button class="rounded-pill w-100" type="submit">
+                <a href="{% url 'register' %}" class="text-decoration-none text-white">Get Started <i class="fa-solid fa-lg me-2 fa-arrow-right"></i></a>
+            </button>
+    </div>
+  </div>
+</nav>
+</header>
