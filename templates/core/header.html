@@ -21,11 +21,19 @@
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
+      {% if user.is_authenticated %}
+      <div class="d-flex get-started btn-lg ">
+            <button class="rounded-pill w-100" type="submit">
+                <a href="{% url 'dashboard' %}" class="text-decoration-none text-white">Dashboard<i class="fa-solid fa-lg me-2 fa-arrow-right"></i></a>
+            </button>
+    </div>
+    {% else %}
         <div class="d-flex get-started btn-lg ">
             <button class="rounded-pill w-100" type="submit">
                 <a href="{% url 'register' %}" class="text-decoration-none text-white">Get Started <i class="fa-solid fa-lg me-2 fa-arrow-right"></i></a>
             </button>
     </div>
+    {% endif %}
   </div>
 </nav>
 </header>
