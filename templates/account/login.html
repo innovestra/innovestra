@@ -17,25 +17,14 @@
                                     <i class="fa-solid fa-sign-in-alt text-success fa-2x"></i>
                                 </div>
                             </div>
-                            <h2 class="fw-bold mb-2">Welcome Back</h2>
+                            <h2 class="fw-bold mb-2">Welcome Back {{user.first_name}}</h2>
                             <p class="text-muted">Sign in to continue to Innovestra</p>
                         </div>
-
-                        <!-- Success/Error Messages -->
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                                    {{ message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
 
                         <!-- Form -->
                         <form method="post" action="{% url 'login' %}">
                             {% csrf_token %}
-                            
-                            <!-- Display form errors -->
+
                             {% if form.errors %}
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <strong>Error!</strong> Invalid username or password.
@@ -45,22 +34,22 @@
 
                             <!-- Username -->
                             <div class="mb-3">
-                                <label for="id_username" class="form-label fw-semibold">Username</label>
+                                <label for="id_username" class="form-label fw-semibold">Email</label>
                                 <input type="text" class="form-control form-control-lg {% if form.username.errors %}is-invalid{% endif %}" 
-                                       id="id_username" name="username" placeholder="example@gmail.com" 
+                                       id="id_username" name="email" placeholder="example@gmail.com" 
                                        value="{{ form.username.value|default:'' }}" required autofocus>
                                 {% if form.username.errors %}
                                     <div class="invalid-feedback">{{ form.username.errors.0 }}</div>
                                 {% endif %}
                             </div>
 
-                            <!-- Password -->
+                            <!-- Password with toggle -->
                             <div class="mb-3">
                                 <label for="id_password1" class="form-label fw-semibold">Password</label>
                                 <div class="input-group input-group-lg">
                                     <input type="password" class="form-control form-control-lg border-end-0 {% if form.password.errors %}is-invalid{% endif %}" 
                                            id="id_password1" name="password" placeholder="*********" required>
-                                    <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="togglePassword1">
+                                    <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="togglePassword">
                                         <i class="fa-solid fa-eye text-muted" id="eyeIcon"></i>
                                     </button>
                                 </div>
@@ -77,12 +66,13 @@
                                         Remember me
                                     </label>
                                 </div>
-                                <a href="{% url "forgot_password" %}" class="text-success text-decoration-none">Forgot Password?</a>
+                                <a href="{% url 'forgot_password' %}" class="text-success text-decoration-none">Forgot Password?</a>
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="btn btn-green btn-lg w-100 rounded-pill mb-3">
-                                Sign In
+                            <button type="submit" id="loginBtn" class="btn btn-green btn-lg w-100 rounded-pill mb-3">
+                                <span id="btnText">Sign In</span>
+                                <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
                             </button>
 
                             <!-- Divider -->

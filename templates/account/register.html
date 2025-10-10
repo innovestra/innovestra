@@ -25,13 +25,13 @@
                         <form method="post" action="{% url 'register' %}">
                             {% csrf_token %}
                             
-                            <!-- Display form errors -->
+                            {% comment %} <!-- Display form errors -->
                             {% if form.errors %}
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <strong>Error!</strong> Please correct the errors below.
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
-                            {% endif %}
+                            {% endif %} {% endcomment %}
 
                             <!-- Name Row -->
                             <div class="row">
