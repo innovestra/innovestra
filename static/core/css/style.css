@@ -58,7 +58,7 @@
 /* Optional: Icon before links with transition */
 .navbar-nav .nav-item .nav-link::before {
   content: '';
-  color: #30B54A;
+  color: #30b54a;
   margin: 0 10px;
   font-weight: 400;
   font-size: 20px;
@@ -112,12 +112,12 @@
 .header .navbar .get-started button:hover {
   background-color: #30b54a;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px #30B54A;
+  box-shadow: 0 4px 8px #30b54a;
 }
 
 .header .navbar .get-started button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px #30B54A;
+  box-shadow: 0 2px 4px #30b54a;
 }
 
 /* Navbar toggler animation */
@@ -296,3 +296,4 @@ footer a:hover {
 footer .text-success {
   color: #30b54a !important;
 }
+

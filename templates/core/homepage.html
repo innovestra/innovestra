@@ -14,13 +14,23 @@
                 <h1 class="display-5 fw-bold mb-4 text-lowercase">Transform your Business with <span class="text-success">Smart Technology</span></h1>
                 <p class="lead mb-4">Empowering businesses through cutting-edge AI, cloud computing, and digital transformation solutions. Partner with Innovestra to unlock your company's full potential.</p>
                 <div class="d-flex gap-3 mb-3 flex-wrap justify-content-center justify-content-lg-start">
+                    {% if user.is_authenticated %}
+                    <a href="#" class="btn btn-green btn-lg rounded-pill px-4">
+                    Dashboard <i class="fa-solid fa-lg me-2 fa-arrow-right"></i>
+                    {% else %}
                     <a href="{% url 'register' %}" class="btn btn-green btn-lg rounded-pill px-4"> 
                     Get Started <i class="fa-solid fa-lg me-2 fa-arrow-right"></i>
                     </a>
-                    <a href="#services" class="btn btn-outline-green btn-lg rounded-pill px-4">
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <a href="#" class="btn btn-outline-green btn-lg rounded-pill px-4">
                     Our Services
                     </a>
-
+                    {% else %}
+                    <a href="#feature" class="btn btn-outline-green btn-lg rounded-pill px-4">
+                    Our Features
+                    </a>
+                    {% endif %}
                 </div>
                 <div class="mt-5 d-flex gap-4 justify-content-center justify-content-lg-start">
                     <div>
@@ -38,7 +48,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 text-center">
-                <img src="{% static 'core/images/ai-01.jpg' %}" alt="Technology Innovation" class="img-fluid rounded-4 shadow-lg hero-image">
+                <img src="{% static 'core/images/ai-01.jpg' %}" alt="Technology Innovation" class="img-fluid rounded-4 shadow-sm hero-image">
             </div>
         </div>
     </div>
@@ -54,7 +64,7 @@
         </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-robot text-success" viewBox="0 0 16 16">
@@ -64,12 +74,11 @@
                         </div>
                         <h4 class="fw-bold mb-3">AI & Machine Learning</h4>
                         <p class="text-muted flex-grow-1">Harness the power of artificial intelligence to automate processes, gain insights, and make data-driven decisions.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cloud-check text-success" viewBox="0 0 16 16">
@@ -79,12 +88,11 @@
                         </div>
                         <h4 class="fw-bold mb-3">Cloud Solutions</h4>
                         <p class="text-muted flex-grow-1">Scale your infrastructure with secure, reliable cloud services. Migration, deployment, and management made simple.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-code-slash text-success" viewBox="0 0 16 16">
@@ -93,12 +101,11 @@
                         </div>
                         <h4 class="fw-bold mb-3">Custom Software Development</h4>
                         <p class="text-muted flex-grow-1">Bespoke software solutions designed to meet your unique business requirements and workflows.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shield-check text-success" viewBox="0 0 16 16">
@@ -108,12 +115,11 @@
                         </div>
                         <h4 class="fw-bold mb-3">Cybersecurity</h4>
                         <p class="text-muted flex-grow-1">Protect your digital assets with comprehensive security audits, threat detection, and compliance solutions.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-graph-up text-success" viewBox="0 0 16 16">
@@ -122,12 +128,11 @@
                         </div>
                         <h4 class="fw-bold mb-3">Data Analytics</h4>
                         <p class="text-muted flex-grow-1">Transform raw data into actionable insights with advanced analytics, visualization, and business intelligence.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="service-card card h-100 border-0 shadow-lg">
+                <div class="service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="service-icon bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-headset text-success" viewBox="0 0 16 16">
@@ -136,13 +141,9 @@
                         </div>
                         <h4 class="fw-bold mb-3">24/7 IT Support</h4>
                         <p class="text-muted flex-grow-1">Round-the-clock technical support to keep your systems running smoothly with minimal downtime.</p>
-                        <a href="#" class="btn btn-outline-green btn-lg rounded-pill mt-3">Explore More →</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="#" class="btn btn-green btn-lg rounded-pill px-5">See All Services →</a>
         </div>
     </div>
 </section>
@@ -214,7 +215,7 @@
             <div class="col-lg-6">
                 <div class="row g-3">
                     <div class="col-6">
-                        <div class="card border-0 shadow-lg p-4 text-center stat-card">
+                        <div class="card border-0 shadow-sm p-4 text-center stat-card">
                             <h3 class="display-5 fw-bold text-success mb-0">
                                 <span class="counter" data-target="10">0</span>+
                             </h3>
@@ -222,7 +223,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="card border-0 shadow-lg p-4 text-center stat-card">
+                        <div class="card border-0 shadow-sm p-4 text-center stat-card">
                             <h3 class="display-5 fw-bold text-success mb-0">
                                 <span class="counter" data-target="200">0</span>+
                             </h3>
@@ -230,7 +231,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="card border-0 shadow-lg p-4 text-center stat-card">
+                        <div class="card border-0 shadow-sm p-4 text-center stat-card">
                             <h3 class="display-5 fw-bold text-success mb-0">
                                 <span class="counter" data-target="15">0</span>+
                             </h3>
@@ -238,7 +239,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="card border-0 shadow-lg p-4 text-center stat-card">
+                        <div class="card border-0 shadow-sm p-4 text-center stat-card">
                             <h3 class="display-5 fw-bold text-success mb-0">24/7</h3>
                             <p class="text-muted mb-0">Support Available</p>
                         </div>
