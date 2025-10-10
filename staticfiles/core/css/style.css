@@ -1,0 +1,298 @@
+.header {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar {
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.header .navbar .navbar-brand {
+  font-size: 28px;
+  font-weight: 800;
+  /* color: #080808 !important; */
+  transition: color 0.3s ease;
+}
+
+.header .navbar .navbar-brand:hover {
+  color: #30b54a !important;
+}
+
+/* Nav link styling with transitions */
+.header .navbar .nav-link {
+  color: #333 !important;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.header .navbar .nav-link:hover {
+  color: #30b54a !important;
+}
+
+/* Animated underline effect */
+.navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #30b54a;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item .nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Optional: Icon before links with transition */
+.navbar-nav .nav-item .nav-link::before {
+  content: '';
+  color: #30B54A;
+  margin: 0 10px;
+  font-weight: 400;
+  font-size: 20px;
+  display: inline-block;
+  transform: translateY(-2px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown transitions */
+.dropdown-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-item {
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-item:hover {
+  padding-left: 25px;
+}
+
+/* Get Started button transitions */
+.header .navbar .get-started button {
+  background-color: #30b54a;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.header .navbar .get-started button:hover {
+  background-color: #30b54a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #30B54A;
+}
+
+.header .navbar .get-started button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px #30B54A;
+}
+
+/* Navbar toggler animation */
+.navbar-toggler {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.1);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Collapse animation */
+.navbar-collapse {
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .header .navbar {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header .navbar .nav-link {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  /* Mobile: slide in effect for nav items */
+  .navbar-collapse {
+    overflow: hidden;
+  }
+
+  .navbar-nav .nav-item {
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  .navbar-nav .nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .navbar-nav .nav-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .navbar-nav .nav-item:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .navbar-nav .nav-item:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .navbar-nav .nav-item:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .navbar-collapse.show .navbar-nav .nav-item {
+    opacity: 1;
+  }
+
+  .header .navbar .get-started {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header .navbar .get-started button {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hhomepage */
+/* .hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+} */
+
+.hero-image {
+  width: 550px;
+  height: 550px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-icon {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-card .btn {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .btn {
+  background-color: #30b54a;
+  color: white;
+  border-color: #30b54a;
+}
+
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+.badge {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 1rem 1rem;
+  background-color: #30b54a;
+}
+.btn-green {
+  background-color: #30b54a;
+  border-color: #30b54a;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-green:hover {
+  background-color: #289c40;
+  border-color: #289c40;
+  color: white;
+}
+
+.btn-outline-green {
+  border-color: #30b54a;
+  color: #30b54a;
+  transition: 0.3s;
+}
+
+.btn-outline-green:hover {
+  background-color: #30b54a;
+  color: white;
+}
+/* Footer */
+footer a:hover {
+  color: #30b54a !important;
+  transition: color 0.3s ease;
+}
+
+footer .text-success {
+  color: #30b54a !important;
+}
