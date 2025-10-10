@@ -45,9 +45,9 @@
 
                             <!-- Username -->
                             <div class="mb-3">
-                                <label for="id_username" class="form-label fw-semibold">Username or Email</label>
+                                <label for="id_username" class="form-label fw-semibold">Username</label>
                                 <input type="text" class="form-control form-control-lg {% if form.username.errors %}is-invalid{% endif %}" 
-                                       id="id_username" name="username" placeholder="Enter your username" 
+                                       id="id_username" name="username" placeholder="example@gmail.com" 
                                        value="{{ form.username.value|default:'' }}" required autofocus>
                                 {% if form.username.errors %}
                                     <div class="invalid-feedback">{{ form.username.errors.0 }}</div>
@@ -59,7 +59,7 @@
                                 <label for="id_password1" class="form-label fw-semibold">Password</label>
                                 <div class="input-group input-group-lg">
                                     <input type="password" class="form-control form-control-lg border-end-0 {% if form.password.errors %}is-invalid{% endif %}" 
-                                           id="id_password1" name="password" placeholder="Enter your password" required>
+                                           id="id_password1" name="password" placeholder="*********" required>
                                     <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="togglePassword1">
                                         <i class="fa-solid fa-eye text-muted" id="eyeIcon"></i>
                                     </button>

@@ -38,7 +38,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="id_first_name" class="form-label fw-semibold">First Name</label>
                                     <input type="text" class="form-control form-control-lg {% if form.first_name.errors %}is-invalid{% endif %}" 
-                                           id="id_first_name" name="first_name" placeholder="First name" 
+                                           id="id_first_name" name="first_name" placeholder="John" 
                                            value="{{ form.first_name.value|default:'' }}" required>
                                     {% if form.first_name.errors %}
                                         <div class="invalid-feedback">{{ form.first_name.errors.0 }}</div>
@@ -47,7 +47,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="id_last_name" class="form-label fw-semibold">Last Name</label>
                                     <input type="text" class="form-control form-control-lg {% if form.last_name.errors %}is-invalid{% endif %}" 
-                                           id="id_last_name" name="last_name" placeholder="Last name" 
+                                           id="id_last_name" name="last_name" placeholder="Doe" 
                                            value="{{ form.last_name.value|default:'' }}" required>
                                     {% if form.last_name.errors %}
                                         <div class="invalid-feedback">{{ form.last_name.errors.0 }}</div>
@@ -59,7 +59,7 @@
                             <div class="mb-3">
                                 <label for="id_email" class="form-label fw-semibold">Email Address</label>
                                 <input type="email" class="form-control form-control-lg {% if form.email.errors %}is-invalid{% endif %}" 
-                                       id="id_email" name="email" placeholder="Enter your email" 
+                                       id="id_email" name="email" placeholder="example@gmail.com" 
                                        value="{{ form.email.value|default:'' }}" required>
                                 {% if form.email.errors %}
                                     <div class="invalid-feedback">{{ form.email.errors.0 }}</div>
@@ -71,7 +71,7 @@
                                 <label for="id_password1" class="form-label fw-semibold">Password</label>
                                 <div class="input-group input-group-lg">
                                     <input type="password" class="form-control form-control-lg border-end-0 {% if form.password1.errors %}is-invalid{% endif %}" 
-                                           id="id_password1" name="password" placeholder="Create a password" required>
+                                           id="id_password1" name="password" placeholder="*********" required>
                                     <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="togglePassword1">
                                         <i class="fa-solid fa-eye text-muted" id="eyeIcon1"></i>
                                     </button>
@@ -86,7 +86,7 @@
                                 <label for="id_password2" class="form-label fw-semibold">Confirm Password</label>
                                 <div class="input-group input-group-lg">
                                     <input type="password" class="form-control form-control-lg border-end-0 {% if form.password2.errors %}is-invalid{% endif %}" 
-                                           id="id_password2" name="password2" placeholder="Confirm your password" required>
+                                           id="id_password2" name="password2" placeholder="*********" required>
                                     <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="togglePassword2">
                                         <i class="fa-solid fa-eye text-muted" id="eyeIcon2"></i>
                                     </button>
