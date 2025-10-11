@@ -11,3 +11,17 @@ venv
 db.sqlite3
 __pycache__/
 *.pyc
+staticfiles/
+media/
+.DS_Store
+*.log
+*.pot
+
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+.qodo/
+
+# Ignore environment variables file
+.env
